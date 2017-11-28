@@ -7,9 +7,6 @@
     "es6": true,
     "jest": true
   },
-  "ecmaFeatures": {
-    "arrowFunctions": true
-  },
   "rules": {
     "comma-dangle": [2, "always-multiline"],
     "arrow-parens": ["error", "as-needed"],
