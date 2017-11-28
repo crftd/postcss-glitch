@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+.travis.yml
+.editorconfig
+.eslintrc
+yarn.lock
+coverage
+.ruby-verision
+.ruby-version
+/npm-debug.log

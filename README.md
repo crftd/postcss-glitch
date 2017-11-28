@@ -1,2 +1,5 @@
 # postcss-glitch
 Glitch effect implemented with PostCSS
+
+[![Build Status](https://travis-ci.org/crftd/postcss-glitch.svg?branch=master)](https://travis-ci.org/crftd/postcss-glitch)
+[![Coverage Status](https://coveralls.io/repos/github/crftd/postcss-glitch/badge.svg?branch=master)](https://coveralls.io/github/crftd/postcss-glitch?branch=master)
