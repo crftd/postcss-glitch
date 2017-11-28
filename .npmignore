@@ -8,3 +8,4 @@ coverage
 .ruby-verision
 .ruby-version
 /npm-debug.log
+/coverage/
