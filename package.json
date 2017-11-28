@@ -7,7 +7,10 @@
   "author": "hex22a <hex22a@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "eslint ./src && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "start": "yarn build",
+    "test": "eslint ./src && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "build:dev": "NODE_ENV=development webpack",
+    "build": "NODE_ENV=production webpack"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
