@@ -213,4 +213,18 @@ ${expectedSelector} {
     expect(mockClipPath.default).toHaveBeenCalledTimes(expectedClipPathNumber);
     expect(expectedRoot.toString()).toEqual(expectedResultCss);
   });
+
+  it('removes glitch declaration', () => {
+    // Arrange
+    const expectedDeclaration = decl({ prop: 'glitch', value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}` });
+    expectedRule.append(expectedDeclaration);
+    expectedRoot.append(expectedRule);
+    const expectedResultCss = `${expectedSelector} {}`;
+
+    // Act
+    plugin.removeDeclaration(expectedDeclaration);
+
+    // Assert
+    expect(expectedRoot.toString()).toEqual(expectedResultCss);
+  });
 });

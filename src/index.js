@@ -52,4 +52,8 @@ export const addKeyframes = declaration => {
   root.prepend(keyframeBefore);
 };
 
+export const removeDeclaration = declaration => {
+  declaration.remove();
+};
+
 export default () => { throw new Error('Not implemented'); };
