@@ -3,11 +3,11 @@
  */
 
 import { decl, rule, root } from 'postcss';
-import * as plugin from '../index';
+import * as translator from '../translator';
 
 jest.mock('../clip-path.builder');
 
-describe('index', () => {
+describe('translator', () => {
   const expectedSelector = '.foo';
   const expectedHeight = '48px';
   const expectedShadowOffset = '1px';
@@ -22,11 +22,37 @@ describe('index', () => {
     expectedRule = rule({ selector: expectedSelector });
   });
 
-  it('throws unimplemented error', () => {
+  it('translates parsed root', () => {
     // Arrange
+    const expectedDeclarationName = translator.DECLARATION_NAME;
+    const expectedResult = {};
+
+    const fakeTranslate = () => {};
+
+    expectedRoot.walkDecls = jest.fn();
+
     // Act
+    translator.default(expectedRoot, expectedResult, fakeTranslate);
+
     // Assert
-    expect(plugin.default).toThrowError('Not implemented');
+    expect(expectedRoot.walkDecls).toHaveBeenCalledWith(expectedDeclarationName, fakeTranslate);
+  });
+
+  it('translate declaration', () => {
+    // Arrange
+    const expectedDeclaration = decl({ prop: 'glitch', value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}` });
+
+    const mockAddPseudo = jest.fn();
+    const mockAddKeyframes = jest.fn();
+    const mockRemoveDeclaration = jest.fn();
+
+    // Act
+    translator.translate(expectedDeclaration, mockAddPseudo, mockAddKeyframes, mockRemoveDeclaration);
+
+    // Assert
+    expect(mockAddPseudo).toHaveBeenCalledWith(expectedDeclaration);
+    expect(mockAddKeyframes).toHaveBeenCalledWith(expectedDeclaration);
+    expect(mockRemoveDeclaration).toHaveBeenCalledWith(expectedDeclaration);
   });
 
   it('adds ::before and ::after pseudo elements to the rule that contains glitch declaration', () => {
@@ -55,7 +81,7 @@ ${expectedSelector}::after {
 }`;
 
     // Act
-    plugin.addPseudo(expectedDeclaration);
+    translator.addPseudo(expectedDeclaration);
 
     // Assert
     expect(expectedRoot.toString()).toEqual(expectedResultCss);
@@ -207,7 +233,7 @@ ${expectedSelector} {
     mockClipPath.default = jest.fn(() => expectedClipPath.clone());
 
     // Act
-    plugin.addKeyframes(expectedDeclaration);
+    translator.addKeyframes(expectedDeclaration);
 
     // Assert
     expect(mockClipPath.default).toHaveBeenCalledTimes(expectedClipPathNumber);
@@ -222,7 +248,7 @@ ${expectedSelector} {
     const expectedResultCss = `${expectedSelector} {}`;
 
     // Act
-    plugin.removeDeclaration(expectedDeclaration);
+    translator.removeDeclaration(expectedDeclaration);
 
     // Assert
     expect(expectedRoot.toString()).toEqual(expectedResultCss);

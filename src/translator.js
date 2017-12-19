@@ -5,6 +5,8 @@
 import { atRule, rule, decl, list } from 'postcss';
 import clipPath from './clip-path.builder';
 
+export const DECLARATION_NAME = 'glitch';
+
 const CONTENT_DECLARATION = decl({ prop: 'content', value: 'attr(data-text)' });
 const POSITION_DECLARATION = decl({ prop: 'position', value: 'absolute' });
 const TOP_DECLARATION = decl({ prop: 'top', value: '0' });
@@ -56,4 +58,12 @@ export const removeDeclaration = declaration => {
   declaration.remove();
 };
 
-export default () => { throw new Error('Not implemented'); };
+export const translate = (declaration, _addPseudo = addPseudo, _addKeyframes = addKeyframes, _removeDeclaration = removeDeclaration) => {
+  _addPseudo(declaration);
+  _addKeyframes(declaration);
+  _removeDeclaration(declaration);
+};
+
+export default (root, result, _translate = translate) => {
+  root.walkDecls(DECLARATION_NAME, _translate);
+};
