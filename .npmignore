@@ -9,3 +9,9 @@ coverage
 .ruby-version
 /npm-debug.log
 /coverage/
+/node_modules/
+webpack.config.js
+.npmignore
+jest-config.json
+.babelrc
+/src/
