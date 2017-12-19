@@ -3,7 +3,7 @@ sudo: false
 cache: yarn
 node_js:
 - '8.4'
-script: yarn test && yarn build
+script: yarn test && yarn build:dev
 git:
   depth: 2
 deploy:
