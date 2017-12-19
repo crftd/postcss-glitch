@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 /**
  * Crafted by Crash on 20.12.17.
  */
@@ -11,4 +10,4 @@ const PLUGIN_NAME = 'postcss-glitch';
 
 export const initialize = () => translator;
 
-module.exports = plugin(PLUGIN_NAME, initialize);
+export default plugin(PLUGIN_NAME, initialize);
