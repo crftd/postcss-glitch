@@ -5,4 +5,12 @@ node_js:
 - '8.4'
 git:
   depth: 2
-script: yarn test
+script: yarn test && yarn build
+deploy:
+  provider: npm
+  email: hex22a@gmail.com
+  api_key:
+    secure: dYlG9IkiQzns1iGI/fHt9AW1fFCn//OxsNiVY06TpZcvWXKbAHLQEtjogkqYPP/Jc+rOLQMlfAGync8FLjvTYdV4FJxKW5Vxts561odPrWTjl+utS5e+Csg0n/vX52YDGHGtH+8pxKp5QzBAAA3UdliHyMCRCvuPHRdk0nXleAepX1t0fyuuQJkIcogow766EuxBTtCv7qYJz/Y8WJ9p+CrJpCmtCkqoszYCUdXdSyUCDF5bIPtx6r0CFTKoUtkm1PEVlp8l/hUJm0r5PzjnVb1BMPti3uLGm2t07Mf37Bo8VEzHgsqoHfSuHP2fJewfRdOK0wJ2mz9wQEQvn4IfbheOQK45jCLP97o3ch8p5a4wRhs0hhqbg16mZ+14uqNY0iNox0Ykbm5iBbbUDfjuGDcWfeuAbWNk8F9tJAomE0IqnE/pAQsFpPKhDbUzqOZGsyLEh+EaKGNMlPGiPzl+JImlXVRlCgleuJ94ZUIqsEBJBrbGIVsAlLJwlaPJTXOtAFIoSAXnqqa3aAhgrQvncr6RrsPDztId+8KTO48nH7WAx/3bnvz0NULvRobpcIGnhCuaNaDaouPj2d9CzTiQyfVF9SH0CobqvdBH5wMRkIjj9n+tNRJ95eSvoAFpXdzlbn7+5b8CtbpxN8y/hhkpPRGcgiwzViZeFK3SS3e8ycM=
+  on:
+    tags: true
+    repo: crftd/postcss-glitch
