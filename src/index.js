@@ -10,4 +10,7 @@ const PLUGIN_NAME = 'postcss-glitch';
 
 export const initialize = () => translator;
 
-module.exports = plugin(PLUGIN_NAME, initialize);
+const glitchPlugin = plugin(PLUGIN_NAME, initialize);
+
+export default glitchPlugin;
+module.exports = glitchPlugin;
