@@ -23,9 +23,6 @@ jobs:
     install:
       - cd ./demo
       - yarn install
-    test:
-      - cd ./demo
-      - yarn test
     script:
       - cd ./demo
-      - yarn build --emoji=true
+      - yarn build
