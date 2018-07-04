@@ -9,7 +9,8 @@
   "scripts": {
     "start": "yarn build",
     "test": "eslint ./src && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "build:dev": "NODE_ENV=development webpack",
+    "build:demo": "NODE_ENV=production node ./src/demo/build/build.js",
+    "build:dev": "NODE_ENV=development webpack --mode=development",
     "build": "NODE_ENV=production webpack"
   },
   "engines": {
@@ -28,7 +29,8 @@
     "eslint-config-airbnb-base": "*",
     "eslint-plugin-import": "*",
     "jest": "*",
-    "webpack": "*"
+    "webpack": "*",
+    "webpack-cli": "*"
   },
   "dependencies": {
     "postcss": "*"
