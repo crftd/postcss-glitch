@@ -9,6 +9,7 @@ jobs:
   include:
   - script: yarn test && yarn build:dev
   - stage: npm
+    script: yarn build
     deploy:
       provider: npm
       skip_cleanup: true
@@ -18,4 +19,7 @@ jobs:
       on:
         tags: true
         repo: crftd/postcss-glitch
+  - stage: github
+    install: cd ./demo && yarn
+    srtipt: cd ./demo && yarn build
 
