@@ -2,7 +2,9 @@
  * Crafted by Crash on 29.11.17.
  */
 
-import { atRule, rule, decl, list } from 'postcss';
+import {
+  atRule, rule, decl, list,
+} from 'postcss';
 import clipPath from './clip-path.builder';
 
 export const DECLARATION_NAME = 'glitch';
