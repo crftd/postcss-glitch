@@ -1,6 +1,6 @@
 # demo
 
-> PostCSS Glitch demo project
+> PostCSS Glitch demo
 
 ## Build Setup
 
