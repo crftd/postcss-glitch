@@ -21,5 +21,4 @@ jobs:
         repo: crftd/postcss-glitch
   - stage: github
     install: cd ./demo && yarn
-    srtipt: cd ./demo && yarn build
-
+    srtipt: yarn build --cwd=./demo --emoji=true
