@@ -15,3 +15,4 @@ webpack.config.js
 jest-config.json
 .babelrc
 /src/
+/demo/
