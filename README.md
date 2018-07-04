@@ -12,5 +12,5 @@ Glitch effect implemented with PostCSS
 To encrypt gh pages key for repo do
 
 ```bash
-travis encrypt -r crftd/postcss-glitch GH_TOKEN=<token here> --org
+travis encrypt -r crftd/postcss-glitch --org
 ```
