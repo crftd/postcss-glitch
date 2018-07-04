@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
-    "test": "npm run unit",
+    "test": "echo Test here",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js"
   },
