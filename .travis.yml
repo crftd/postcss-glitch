@@ -24,5 +24,13 @@ jobs:
       - cd ./demo
       - yarn install
     script:
-      - cd ./demo
       - yarn build
+    deploy:
+      provider: pages
+      local_dir: ./demo/dist
+      skip_cleanup: true
+      github_token:
+        secure: lCg1cwGMM1DXiwnQS5+sQplMkFyZgFimOTfuQlAG1y7RPydsvxsJc3wIPX6BEa5SkE+y45I5EqyXE8Z61SvWf7LuzUeTNkW4GLoRiRP+t53cDJcNcyEO9raL27+ftzl2d7tvtXRlil5XSFocqwRJhrcCxM9eczKIwgxW5lwmVYqDxxmvdbD8QBpnd19u6nZeMFk8AozFiJhL4a62Aju7u6bgfhzekiQKP4Gx/zmuZBu88esFoTub668w5Xd1mxNrftSHFzt6Xl8m5X6lINMm52IFu/CWNRhFjEXAE+nuV9jPz0dQLm1gClQYXypfOTpaOFwoNR3MAE+rDwA68RwvbIL7sT8KXHbxsLPtLtQA6atDZ6lkk+qhEyd5+ik5PgFqgsISKoH/dTBy/N7wtkdCc+zVmpULU7ZoklkMgQHMZYodLgSLxqVe8jmrM3P7NvCXmngGKa1Ys/x3NIzTn+7Erja8o2vli7ed3nh5qXp1xiFotsvh/V9Dxchvl44ir1pDEEtSrIoiwBtVkF6Hyd0gXZCjJQI/Ep0z63dckEwFzC6VsF91gOLUGistk36KuBRDo7layOE1yAps7meUFcoWLt4Zu17j6BJAA4pAiM78mdDc5M+viy7Qos6kj3rT/g6TJiUGxJjqZuTCJtj7TnMWcNVbAgSLkx7HfwiGtyGqKgE=
+      on:
+        tags: true
+        branch: master
