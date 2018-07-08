@@ -6,6 +6,14 @@
   "repository": "git@github.com:crftd/postcss-glitch.git",
   "author": "hex22a <hex22a@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin",
+    "glitch",
+    "effect",
+    "animation"
+  ],
   "scripts": {
     "start": "yarn build",
     "lint": "eslint ./src",
