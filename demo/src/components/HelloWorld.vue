@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="hello" data-text="PostCSS Glitch">PostCSS Glitch</div>
+    <div class="glitch" data-text="PostCSS Glitch">PostCSS Glitch</div>
+    <div class="docs">For more information visit <a href="https://github.com/crftd/postcss-glitch#postcss-glitch">https://github.com/crftd/postcss-glitch#postcss-glitch</a></div>
   </div>
 </template>
 
@@ -12,7 +13,7 @@
   .wrapper {
     position: relative;
   }
-  .hello {
+  .glitch {
     font-weight: 700;
     font-size: 23pt;
     glitch: 42px #f00 #00f 2px;
