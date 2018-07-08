@@ -8,23 +8,41 @@ describe('clip-path builder', () => {
   it('returns clip-path declaration', () => {
     // Arrange
     const builder = require('../clip-path.builder');
-    const expectedHeight = 51;
+    const expectedTrueHeight = 51;
+    const expectedHeight = '51px';
     const expectedOffsetTop = 25;
     const expectedGlitchHeight = 5;
     const expectedOffsetBottom = 21;
     const expectedClipPath = decl({ prop: 'clip-path', value: `inset(${expectedOffsetTop}px 0 ${expectedOffsetBottom}px 0)` });
 
-    const mockGetOffsetTop = jest.fn(() => expectedOffsetTop);
-    const mockGetOffsetBottom = () => expectedOffsetBottom;
+    const fakeGetOffsetTop = () => expectedOffsetTop;
+    const fakeGetOffsetBottom = () => expectedOffsetBottom;
 
-    builder.utils.getOffsetTop = mockGetOffsetTop;
-    builder.utils.getOffsetBottom = mockGetOffsetBottom;
+    const mockParseHeight = jest.fn(() => expectedTrueHeight);
+
+    builder.utils.getOffsetTop = fakeGetOffsetTop;
+    builder.utils.getOffsetBottom = fakeGetOffsetBottom;
+    builder.utils.parseHeight = mockParseHeight;
 
     // Act
     const actualClipPath = builder.default(expectedHeight, expectedGlitchHeight);
 
     // Assert
+    expect(mockParseHeight).toHaveBeenCalledWith(expectedHeight);
     expect(actualClipPath).toEqual(expectedClipPath);
+  });
+
+  it('parse height', () => {
+    // Arrange
+    const builder = require('../clip-path.builder');
+    const expectedHeight = '51px';
+    const expectedParsedHeight = 51;
+
+    // Act
+    const actualParsedHeight = builder.parseHeight(expectedHeight);
+
+    // Assert
+    expect(actualParsedHeight).toEqual(expectedParsedHeight);
   });
 
   it('returns top offset', () => {

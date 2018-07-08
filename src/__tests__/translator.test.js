@@ -81,10 +81,12 @@ ${expectedSelector}::before, ${expectedSelector}::after {
     clip-path: inset(${expectedHeight} 0 0 0)
 }
 ${expectedSelector}::before {
-    text-shadow: -${expectedShadowOffset} 0 ${expectedFirstColor}
+    text-shadow: -${expectedShadowOffset} 0 ${expectedFirstColor};
+    animation: glitch-animation-before 3s infinite linear alternate-reverse;
 }
 ${expectedSelector}::after {
-    text-shadow: ${expectedShadowOffset} 0 ${expectedSecondColor}
+    text-shadow: ${expectedShadowOffset} 0 ${expectedSecondColor};
+    animation: glitch-animation-after 2s infinite linear alternate-reverse;
 }`;
 
     // Act
