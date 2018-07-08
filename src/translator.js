@@ -13,8 +13,6 @@ const CONTENT_DECLARATION = decl({ prop: 'content', value: 'attr(data-text)' });
 const POSITION_DECLARATION = decl({ prop: 'position', value: 'absolute' });
 const TOP_DECLARATION = decl({ prop: 'top', value: '0' });
 const LEFT_DECLARATION = decl({ prop: 'left', value: '0' });
-const COLOR_DECLARATION = decl({ prop: 'color', value: '#fff' });
-const BACKGROUND_DECLARATION = decl({ prop: 'background', value: '#000' });
 const OVERFLOW_DECLARATION = decl({ prop: 'overflow', value: 'hidden' });
 
 export const addPseudo = declaration => {
@@ -34,8 +32,6 @@ export const addPseudo = declaration => {
     .append(POSITION_DECLARATION)
     .append(TOP_DECLARATION)
     .append(LEFT_DECLARATION)
-    .append(COLOR_DECLARATION)
-    .append(BACKGROUND_DECLARATION)
     .append(OVERFLOW_DECLARATION)
     .append(decl({ prop: 'clip-path', value: `inset(${height} 0 0 0)` }));
   declaration.parent.after(afterRule);

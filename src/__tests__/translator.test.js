@@ -75,8 +75,6 @@ ${expectedSelector}::before, ${expectedSelector}::after {
     position: absolute;
     top: 0;
     left: 0;
-    color: #fff;
-    background: #000;
     overflow: hidden;
     clip-path: inset(${expectedHeight} 0 0 0)
 }
