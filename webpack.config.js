@@ -11,6 +11,7 @@ const config = {
   entry: {
     bundle: './index.js',
   },
+  target: 'node',
   output: {
     path: staticsPath,
     filename: 'index.js',

@@ -6,13 +6,13 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "echo Test here",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "NODE_ENV=production node build/build.js"
   },
   "dependencies": {
+    "postcss-glitch": "*",
     "vue": "^2.5.2"
   },
   "devDependencies": {
