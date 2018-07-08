@@ -6,7 +6,6 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd = nodeEnv === 'production';
 
 const config = {
-  devtool: isProd ? 'source-map' : 'eval-source-map',
   context: sourcePath,
   entry: {
     bundle: './index.js',
