@@ -94,7 +94,7 @@ module.exports = {
 transforms to
 
 ```css
-@keyframes glitch-animation-before-data {
+@keyframes glitch-animation-before {
   0% {
     clip-path: inset(5px 0 32px 0)
   }
@@ -112,7 +112,7 @@ transforms to
   }
 }
 
-@keyframes glitch-animation-after-data {
+@keyframes glitch-animation-after {
   0% {
     clip-path: inset(20px 0 17px 0)
   }
@@ -150,12 +150,12 @@ transforms to
 
 .glitch:before {
   text-shadow: -2px 0 red;
-  animation: glitch-animation-before-data 3s infinite linear alternate-reverse
+  animation: glitch-animation-before 3s infinite linear alternate-reverse
 }
 
 .glitch:after {
   text-shadow: 2px 0 #00f;
-  animation: glitch-animation-after-data 2s infinite linear alternate-reverse
+  animation: glitch-animation-after 2s infinite linear alternate-reverse
 }
 ```
 
