@@ -10,5 +10,6 @@
   .hello {
     font-weight: 700;
     font-size: 23pt;
+    glitch: 42px #f00 #00F 2px;
   }
 </style>

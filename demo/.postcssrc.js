@@ -3,8 +3,8 @@
 module.exports = {
   "plugins": {
     "postcss-import": {},
+    "postcss-glitch": () => {},
     "postcss-url": {},
-    "autoprefixer": {},
-    "postcss-glitch": {}
+    "autoprefixer": {}
   }
 }
