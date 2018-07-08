@@ -7,9 +7,11 @@ git:
   depth: 2
 jobs:
   include:
-  - script: yarn test && yarn build:dev
+  - script:
+      - yarn lint
+      - yarn test
   - stage: npm
-    script: yarn build:dev
+    script: yarn build
     deploy:
       provider: npm
       skip_cleanup: true
