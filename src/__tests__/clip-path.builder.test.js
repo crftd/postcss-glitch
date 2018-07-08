@@ -5,7 +5,7 @@
 import { decl } from 'postcss';
 
 describe('clip-path builder', () => {
-  it('returns clip-path declaration', () => {
+  it('returns clip-path declaration - glitchHeight passed', () => {
     // Arrange
     const builder = require('../clip-path.builder');
     const expectedTrueHeight = 51;
@@ -26,6 +26,32 @@ describe('clip-path builder', () => {
 
     // Act
     const actualClipPath = builder.default(expectedHeight, expectedGlitchHeight);
+
+    // Assert
+    expect(mockParseHeight).toHaveBeenCalledWith(expectedHeight);
+    expect(actualClipPath).toEqual(expectedClipPath);
+  });
+
+  it('returns clip-path declaration - default glitchHeight = 5', () => {
+    // Arrange
+    const builder = require('../clip-path.builder');
+    const expectedTrueHeight = 51;
+    const expectedHeight = '51px';
+    const expectedOffsetTop = 25;
+    const expectedOffsetBottom = 21;
+    const expectedClipPath = decl({ prop: 'clip-path', value: `inset(${expectedOffsetTop}px 0 ${expectedOffsetBottom}px 0)` });
+
+    const fakeGetOffsetTop = () => expectedOffsetTop;
+    const fakeGetOffsetBottom = () => expectedOffsetBottom;
+
+    const mockParseHeight = jest.fn(() => expectedTrueHeight);
+
+    builder.utils.getOffsetTop = fakeGetOffsetTop;
+    builder.utils.getOffsetBottom = fakeGetOffsetBottom;
+    builder.utils.parseHeight = mockParseHeight;
+
+    // Act
+    const actualClipPath = builder.default(expectedHeight);
 
     // Assert
     expect(mockParseHeight).toHaveBeenCalledWith(expectedHeight);
