@@ -149,7 +149,7 @@ transforms to
 }
 
 .glitch:before {
-  text-shadow: -2px 0 red;
+  text-shadow: -2px 0 #f00;
   animation: glitch-animation-before 3s infinite linear alternate-reverse
 }
 
