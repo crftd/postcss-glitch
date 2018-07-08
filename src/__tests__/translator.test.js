@@ -3,7 +3,6 @@
  */
 
 import { decl, rule, root } from 'postcss';
-import * as translator from '../translator';
 
 jest.mock('../clip-path.builder');
 
@@ -17,7 +16,10 @@ describe('translator', () => {
   let expectedRoot;
   let expectedRule;
 
+  let translator;
+
   beforeEach(() => {
+    translator = require('../translator');
     expectedRoot = root();
     expectedRule = rule({ selector: expectedSelector });
   });
@@ -30,9 +32,10 @@ describe('translator', () => {
     const fakeTranslate = () => {};
 
     expectedRoot.walkDecls = jest.fn();
+    translator.utils.translate = fakeTranslate;
 
     // Act
-    translator.default(expectedRoot, expectedResult, fakeTranslate);
+    translator.default(expectedRoot, expectedResult);
 
     // Assert
     expect(expectedRoot.walkDecls).toHaveBeenCalledWith(expectedDeclarationName, fakeTranslate);
@@ -46,8 +49,12 @@ describe('translator', () => {
     const mockAddKeyframes = jest.fn();
     const mockRemoveDeclaration = jest.fn();
 
+    translator.utils.addPseudo = mockAddPseudo;
+    translator.utils.addKeyframes = mockAddKeyframes;
+    translator.utils.removeDeclaration = mockRemoveDeclaration;
+
     // Act
-    translator.translate(expectedDeclaration, mockAddPseudo, mockAddKeyframes, mockRemoveDeclaration);
+    translator.translate(expectedDeclaration);
 
     // Assert
     expect(mockAddPseudo).toHaveBeenCalledWith(expectedDeclaration);

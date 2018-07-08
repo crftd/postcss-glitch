@@ -60,12 +60,16 @@ export const removeDeclaration = declaration => {
   declaration.remove();
 };
 
-export const translate = (declaration, _addPseudo = addPseudo, _addKeyframes = addKeyframes, _removeDeclaration = removeDeclaration) => {
-  _addPseudo(declaration);
-  _addKeyframes(declaration);
-  _removeDeclaration(declaration);
+export const translate = declaration => {
+  utils.addPseudo(declaration);
+  utils.addKeyframes(declaration);
+  utils.removeDeclaration(declaration);
 };
 
-export default (root, result, _translate = translate) => {
-  root.walkDecls(DECLARATION_NAME, _translate);
+export const utils = {
+  addPseudo, addKeyframes, removeDeclaration, translate,
+};
+
+export default root => {
+  root.walkDecls(DECLARATION_NAME, utils.translate);
 };
