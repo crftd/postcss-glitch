@@ -2,7 +2,7 @@ language: node_js
 sudo: false
 cache: yarn
 node_js:
-- '10.5'
+- 11
 git:
   depth: 2
 jobs:
