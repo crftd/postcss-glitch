@@ -31,9 +31,6 @@ const config = {
         test: /\.js$/,
         include: sourcePath,
         loader: 'babel-loader',
-        options: {
-          presets: ['es2015', 'stage-0'],
-        },
       },
     ],
   },
