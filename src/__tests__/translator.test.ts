@@ -2,7 +2,8 @@
  * Crafted by Crash on 29.11.17.
  */
 
-import { decl, rule, root } from 'postcss';
+import {decl, rule, root, Root, Rule} from 'postcss';
+import * as translator from '../translator';
 
 jest.mock('../clip-path.builder');
 
@@ -13,13 +14,11 @@ describe('translator', () => {
   const expectedFirstColor = '#f00';
   const expectedSecondColor = '#00f';
 
-  let expectedRoot;
-  let expectedRule;
+  let expectedRoot: Root;
+  let expectedRule: Rule;
 
-  let translator;
 
   beforeEach(() => {
-    translator = require('../translator');
     expectedRoot = root();
     expectedRule = rule({ selector: expectedSelector });
   });
@@ -27,7 +26,6 @@ describe('translator', () => {
   it('translates parsed root', () => {
     // Arrange
     const expectedDeclarationName = translator.DECLARATION_NAME;
-    const expectedResult = {};
 
     const fakeTranslate = () => {};
 
@@ -35,7 +33,7 @@ describe('translator', () => {
     translator.utils.translate = fakeTranslate;
 
     // Act
-    translator.default(expectedRoot, expectedResult);
+    translator.default(expectedRoot);
 
     // Assert
     expect(expectedRoot.walkDecls).toHaveBeenCalledWith(expectedDeclarationName, fakeTranslate);

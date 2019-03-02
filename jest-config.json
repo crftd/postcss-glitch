@@ -1,6 +1,9 @@
 {
   "verbose": true,
   "testMatch": [
-    "**/__tests__/**/*.js?(x)"
-  ]
+    "**/__tests__/**/*.ts?(x)"
+  ],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  }
 }

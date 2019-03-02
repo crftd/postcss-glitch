@@ -1,6 +1,18 @@
 {
-  "extends": "airbnb-base",
-  "parser": "babel-eslint",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".mjs", ".js", ".ts", ".json"]
+      }
+    },
+    "import/extensions": [".js", ".ts", ".mjs"]
+  },
   "env": {
     "browser": true,
     "node": true,
@@ -8,6 +20,7 @@
     "jest": true
   },
   "rules": {
+    "@typescript-eslint/indent": "off",
     "comma-dangle": [2, "always-multiline"],
     "arrow-parens": ["error", "as-needed"],
     "semi": 2,

@@ -2,7 +2,7 @@
  * Crafted by Crash on 20.12.17.
  */
 
-import * as plugin from '../index';
+import * as plugin from '..';
 
 jest.mock('../translator');
 

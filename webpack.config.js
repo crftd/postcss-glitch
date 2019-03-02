@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack');
 
 const sourcePath = `${__dirname}/src`;
@@ -10,7 +11,7 @@ const config = {
   devtool: isProd ? 'source-map' : 'eval-source-map',
   context: sourcePath,
   entry: {
-    bundle: './index.js',
+    bundle: './index.ts',
   },
   target: 'node',
   output: {
@@ -19,7 +20,7 @@ const config = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts'],
     modules: [
       `${__dirname}/node_modules`,
       sourcePath,
@@ -28,7 +29,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         include: sourcePath,
         loader: 'babel-loader',
       },

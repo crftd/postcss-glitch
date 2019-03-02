@@ -2,18 +2,18 @@
  * Crafted by Crash on 14.12.17.
  */
 
-import { decl } from 'postcss';
+import {decl, Declaration} from 'postcss';
+import * as builder from '../clip-path.builder';
 
 describe('clip-path builder', () => {
   it('returns clip-path declaration - glitchHeight passed', () => {
     // Arrange
-    const builder = require('../clip-path.builder');
-    const expectedTrueHeight = 51;
-    const expectedHeight = '51px';
-    const expectedOffsetTop = 25;
-    const expectedGlitchHeight = 5;
-    const expectedOffsetBottom = 21;
-    const expectedClipPath = decl({ prop: 'clip-path', value: `inset(${expectedOffsetTop}px 0 ${expectedOffsetBottom}px 0)` });
+    const expectedTrueHeight: number = 51;
+    const expectedHeight: String = '51px';
+    const expectedOffsetTop: number = 25;
+    const expectedGlitchHeight: number = 5;
+    const expectedOffsetBottom: number = 21;
+    const expectedClipPath: Declaration = decl({ prop: 'clip-path', value: `inset(${expectedOffsetTop}px 0 ${expectedOffsetBottom}px 0)` });
 
     const fakeGetOffsetTop = () => expectedOffsetTop;
     const fakeGetOffsetBottom = () => expectedOffsetBottom;

@@ -3,7 +3,7 @@
  */
 
 import {
-  atRule, rule, decl, list,
+  atRule, rule, decl, list, Root, Declaration, Rule,
 } from 'postcss';
 import clipPath from './clip-path.builder';
 
@@ -15,9 +15,10 @@ const TOP_DECLARATION = decl({ prop: 'top', value: '0' });
 const LEFT_DECLARATION = decl({ prop: 'left', value: '0' });
 const OVERFLOW_DECLARATION = decl({ prop: 'overflow', value: 'hidden' });
 
-export const addPseudo = declaration => {
+export const addPseudo = (declaration: Declaration) => {
   const [height, firstColor, secondColor, shadowOffset] = list.space(declaration.value);
-  const { selector } = declaration.parent;
+  const parent: Rule = declaration.parent as Rule;
+  const selector: string = parent.selector;
   const beforeRule = rule({ selector: `${selector}::before` });
   beforeRule
     .append(decl({ prop: 'text-shadow', value: `-${shadowOffset} 0 ${firstColor}` }))
@@ -39,7 +40,7 @@ export const addPseudo = declaration => {
   declaration.parent.after(beforeAfterRule);
 };
 
-export const addKeyframes = declaration => {
+export const addKeyframes = (declaration: Declaration) => {
   const [height] = list.space(declaration.value);
   const root = declaration.root();
   const keyframeBefore = atRule({ name: 'keyframes', params: 'glitch-animation-before' });
@@ -56,11 +57,11 @@ export const addKeyframes = declaration => {
   root.prepend(keyframeBefore);
 };
 
-export const removeDeclaration = declaration => {
+export const removeDeclaration = (declaration: Declaration) => {
   declaration.remove();
 };
 
-export const translate = declaration => {
+export const translate = (declaration: Declaration) => {
   utils.addPseudo(declaration);
   utils.addKeyframes(declaration);
   utils.removeDeclaration(declaration);
@@ -70,6 +71,6 @@ export const utils = {
   addPseudo, addKeyframes, removeDeclaration, translate,
 };
 
-export default root => {
+export default (root: Root) => {
   root.walkDecls(DECLARATION_NAME, utils.translate);
 };
