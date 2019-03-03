@@ -19,3 +19,4 @@ jest-config.json
 tsconfig.json
 .prettierrc
 .prettierignore
+.github
