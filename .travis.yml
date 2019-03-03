@@ -2,37 +2,37 @@ language: node_js
 sudo: false
 cache: yarn
 node_js:
-- 11
+  - 11
 git:
   depth: 2
 jobs:
   include:
-  - script:
-      - yarn lint
-      - yarn test
-  - stage: npm
-    script: yarn build
-    deploy:
-      provider: npm
-      skip_cleanup: true
-      email: hex22a@gmail.com
-      api_key:
-        secure: I6SEYaPaHVEcGlcRqCy7rrSMS9elJkyW7pkyzXF7ee/IbxMDiov8dO90Ggab3U7TCIs044Fes0aXZLLeVCVestjx5+b5Zk+i7hL77dwu4feRqJcryEWN9vaHe2Tl/GXTZ1VGW6aMq4NcNnZlFOOvMDHgv9YPf/8vkIutCJYBh4P0y3Cl5SEi65chCPe5BfAcrk8OUHDVWfmOQ+zu7e5Wlnb5AH6FEMmONXJn1EMJK7WFTdPhmQQcty+wOGXb0iBpMY7eii+BFWlWiJj4e7iml2a0p0D88KzpobijBW1zGzViMMNImzNKIIJ8NYBlLqdXDOMlbLQyPUyg78QpySbP7dkRLkyEUTbhCPf9FrtHoCpCSm35AIBdO9eXbDa0hl1dz1iP9LRKtTt6uH9oWWg+YoBUUAvHX9fTOeza3vO69dQfJtFqKmohZhVTIAu1kps6b3XL/oQDo19vPDpldxBjgSo5W8IYa0YdAu5bpbW/2WxCWGgos3nvP3X7eqj6eNbiBvF/VBFYt+nuNOZHrCJ0yWWgSNwdWlJckrsAlm2LTT0WQ2Ke8eQbltT8/KjuY5bkm0Rotv/Nijkwqhe5zn4KKfr0e6Lm7zVPzMI75mqz08WoXaD8l5+9jJ+e7OoYDv6XYtfS4DfHZUAotdoXFOomMg08xHMeOZ6UxdaVBBFd2Yc=
-      on:
-        tags: true
-        repo: crftd/postcss-glitch
-  - stage: github
-    install:
-      - cd ./demo
-      - yarn install
-    script:
-      - yarn build
-    deploy:
-      provider: pages
-      local_dir: ./demo/dist
-      skip_cleanup: true
-      github_token:
-        secure: M6HYYCkeFzmQtYcSoITNTJfGJtFstQjYQpCr4F+9xw8wP+0Ahm5S5T3KVrxChuVLR7C5Y2BX2bJ+Qip9vR0oKUXVRP6Lg5FrVWv6IqypK1PpIV5X35jVCrXKBNexA+l7dGwdRgpnkHL1xirK7M1cQL+x0D/bmbZrae/qAQiYSb4lFbG0/pJqMFJYXGqSD9AHi8YCPqKo506ed+/y5TPJE3kG4xyH/xcxTGs8zda4v4XnVF0fkQu31TwEIf4CcMipq6M/xCmkYkDDl00Rw++reIdrdg1PxJE9f0YvqMb+fzchQg5SXZ9BNtobWPIju6fB7LQ3XJ4lEkYtw4zeeutEKa+kRgWqbkUgvlxcnnZUHL5mBZwptbo0N8sqxbUrWocAcrv541YJ4WUkG39wORXqBXBbNfCNq185nQlyScmiGeIyGMeEWv7AGqGVsftqQYHqKtTaqWwViIgwF3PMRpM9deNMu/e7k1N0P1Z1bP/Qs/sGSWf6UFkkxtLiIJfUCo1hx8jfMpifJLbdIRO7li88kX/mhyuwGbceCbWhuGZzyEShLoSEGED2mxcEYuuitXegcBsjsAUfMg3LFRztoTF+ZRgegsjZzBCJpL+ORA5HHo12g59ieX7UzDG1YvG8QK1obg+Lh4Q3LME2uJ51k6HUA0XSbyXA4jj4pikHaEPrQlE=
-      on:
-        tags: true
-        branch: master
+    - script:
+        - yarn lint
+        - yarn test
+    - stage: npm
+      script: yarn build:ci
+      deploy:
+        provider: npm
+        skip_cleanup: true
+        email: hex22a@gmail.com
+        api_key:
+          secure: I6SEYaPaHVEcGlcRqCy7rrSMS9elJkyW7pkyzXF7ee/IbxMDiov8dO90Ggab3U7TCIs044Fes0aXZLLeVCVestjx5+b5Zk+i7hL77dwu4feRqJcryEWN9vaHe2Tl/GXTZ1VGW6aMq4NcNnZlFOOvMDHgv9YPf/8vkIutCJYBh4P0y3Cl5SEi65chCPe5BfAcrk8OUHDVWfmOQ+zu7e5Wlnb5AH6FEMmONXJn1EMJK7WFTdPhmQQcty+wOGXb0iBpMY7eii+BFWlWiJj4e7iml2a0p0D88KzpobijBW1zGzViMMNImzNKIIJ8NYBlLqdXDOMlbLQyPUyg78QpySbP7dkRLkyEUTbhCPf9FrtHoCpCSm35AIBdO9eXbDa0hl1dz1iP9LRKtTt6uH9oWWg+YoBUUAvHX9fTOeza3vO69dQfJtFqKmohZhVTIAu1kps6b3XL/oQDo19vPDpldxBjgSo5W8IYa0YdAu5bpbW/2WxCWGgos3nvP3X7eqj6eNbiBvF/VBFYt+nuNOZHrCJ0yWWgSNwdWlJckrsAlm2LTT0WQ2Ke8eQbltT8/KjuY5bkm0Rotv/Nijkwqhe5zn4KKfr0e6Lm7zVPzMI75mqz08WoXaD8l5+9jJ+e7OoYDv6XYtfS4DfHZUAotdoXFOomMg08xHMeOZ6UxdaVBBFd2Yc=
+        on:
+          tags: true
+          repo: crftd/postcss-glitch
+    - stage: github
+      install:
+        - cd ./demo
+        - yarn install
+      script:
+        - yarn build
+      deploy:
+        provider: pages
+        local_dir: ./demo/dist
+        skip_cleanup: true
+        github_token:
+          secure: M6HYYCkeFzmQtYcSoITNTJfGJtFstQjYQpCr4F+9xw8wP+0Ahm5S5T3KVrxChuVLR7C5Y2BX2bJ+Qip9vR0oKUXVRP6Lg5FrVWv6IqypK1PpIV5X35jVCrXKBNexA+l7dGwdRgpnkHL1xirK7M1cQL+x0D/bmbZrae/qAQiYSb4lFbG0/pJqMFJYXGqSD9AHi8YCPqKo506ed+/y5TPJE3kG4xyH/xcxTGs8zda4v4XnVF0fkQu31TwEIf4CcMipq6M/xCmkYkDDl00Rw++reIdrdg1PxJE9f0YvqMb+fzchQg5SXZ9BNtobWPIju6fB7LQ3XJ4lEkYtw4zeeutEKa+kRgWqbkUgvlxcnnZUHL5mBZwptbo0N8sqxbUrWocAcrv541YJ4WUkG39wORXqBXBbNfCNq185nQlyScmiGeIyGMeEWv7AGqGVsftqQYHqKtTaqWwViIgwF3PMRpM9deNMu/e7k1N0P1Z1bP/Qs/sGSWf6UFkkxtLiIJfUCo1hx8jfMpifJLbdIRO7li88kX/mhyuwGbceCbWhuGZzyEShLoSEGED2mxcEYuuitXegcBsjsAUfMg3LFRztoTF+ZRgegsjZzBCJpL+ORA5HHo12g59ieX7UzDG1YvG8QK1obg+Lh4Q3LME2uJ51k6HUA0XSbyXA4jj4pikHaEPrQlE=
+        on:
+          tags: true
+          branch: master

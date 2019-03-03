@@ -1,11 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const sourcePath = `${__dirname}/src`;
 const staticsPath = `${__dirname}/dist`;
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd = nodeEnv === 'production';
+
+const isRunningOnCi = process.env.CI || false;
+
+const plugins = [new webpack.NamedModulesPlugin()];
+
+if (!isRunningOnCi) plugins.push(new BundleAnalyzerPlugin());
 
 const config = {
   devtool: isProd ? 'source-map' : 'eval-source-map',
@@ -21,10 +28,7 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.ts'],
-    modules: [
-      `${__dirname}/node_modules`,
-      sourcePath,
-    ],
+    modules: [`${__dirname}/node_modules`, sourcePath],
   },
   module: {
     rules: [
@@ -35,9 +39,7 @@ const config = {
       },
     ],
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-  ],
+  plugins,
 };
 
 module.exports = config;
