@@ -2,9 +2,7 @@
  * Crafted by Crash on 29.11.17.
  */
 
-import {
-  atRule, rule, decl, list, Root, Declaration, Rule,
-} from 'postcss';
+import { atRule, rule, decl, list, Root, Declaration, Rule } from 'postcss';
 import clipPath from './clip-path.builder';
 
 export const DECLARATION_NAME = 'glitch';
@@ -15,7 +13,7 @@ const TOP_DECLARATION = decl({ prop: 'top', value: '0' });
 const LEFT_DECLARATION = decl({ prop: 'left', value: '0' });
 const OVERFLOW_DECLARATION = decl({ prop: 'overflow', value: 'hidden' });
 
-export const addPseudo = (declaration: Declaration) => {
+export const addPseudo = (declaration: Declaration): void => {
   const [height, firstColor, secondColor, shadowOffset] = list.space(declaration.value);
   const parent: Rule = declaration.parent as Rule;
   const selector: string = parent.selector;
@@ -40,7 +38,7 @@ export const addPseudo = (declaration: Declaration) => {
   declaration.parent.after(beforeAfterRule);
 };
 
-export const addKeyframes = (declaration: Declaration) => {
+export const addKeyframes = (declaration: Declaration): void => {
   const [height] = list.space(declaration.value);
   const root = declaration.root();
   const keyframeBefore = atRule({ name: 'keyframes', params: 'glitch-animation-before' });
@@ -57,20 +55,25 @@ export const addKeyframes = (declaration: Declaration) => {
   root.prepend(keyframeBefore);
 };
 
-export const removeDeclaration = (declaration: Declaration) => {
+export const removeDeclaration = (declaration: Declaration): void => {
   declaration.remove();
 };
 
-export const translate = (declaration: Declaration) => {
+export const utils = {
+  addPseudo,
+  addKeyframes,
+  removeDeclaration,
+  translate: (/* eslint-disable @typescript-eslint/no-unused-vars */ _: Declaration): void => {},
+};
+
+export const translate = (declaration: Declaration): void => {
   utils.addPseudo(declaration);
   utils.addKeyframes(declaration);
   utils.removeDeclaration(declaration);
 };
 
-export const utils = {
-  addPseudo, addKeyframes, removeDeclaration, translate,
-};
+utils.translate = translate;
 
-export default (root: Root) => {
+export default (root: Root): void => {
   root.walkDecls(DECLARATION_NAME, utils.translate);
 };

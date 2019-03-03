@@ -2,7 +2,7 @@
  * Crafted by Crash on 29.11.17.
  */
 
-import {decl, rule, root, Root, Rule} from 'postcss';
+import { decl, rule, root, Root, Rule } from 'postcss';
 import * as translator from '../translator';
 
 jest.mock('../clip-path.builder');
@@ -17,7 +17,6 @@ describe('translator', () => {
   let expectedRoot: Root;
   let expectedRule: Rule;
 
-
   beforeEach(() => {
     expectedRoot = root();
     expectedRule = rule({ selector: expectedSelector });
@@ -27,7 +26,7 @@ describe('translator', () => {
     // Arrange
     const expectedDeclarationName = translator.DECLARATION_NAME;
 
-    const fakeTranslate = () => {};
+    const fakeTranslate = (): void => {};
 
     expectedRoot.walkDecls = jest.fn();
     translator.utils.translate = fakeTranslate;
@@ -41,7 +40,10 @@ describe('translator', () => {
 
   it('translate declaration', () => {
     // Arrange
-    const expectedDeclaration = decl({ prop: 'glitch', value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}` });
+    const expectedDeclaration = decl({
+      prop: 'glitch',
+      value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}`,
+    });
 
     const mockAddPseudo = jest.fn();
     const mockAddKeyframes = jest.fn();
@@ -62,7 +64,10 @@ describe('translator', () => {
 
   it('adds ::before and ::after pseudo elements to the rule that contains glitch declaration', () => {
     // Arrange
-    const expectedDeclaration = decl({ prop: 'glitch', value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}` });
+    const expectedDeclaration = decl({
+      prop: 'glitch',
+      value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}`,
+    });
     expectedRule.append(expectedDeclaration);
     expectedRoot.append(expectedRule);
     const expectedResultCss = `${expectedSelector} {
@@ -97,8 +102,14 @@ ${expectedSelector}::after {
     const expectedClipPathNumber = 42;
     const expectedOffsetTop = '24px';
     const expectedOffsetBottom = '19px';
-    const expectedClipPath = decl({ prop: 'clip-path', value: `inset(${expectedOffsetTop} 0 ${expectedOffsetBottom} 0)` });
-    const expectedDeclaration = decl({ prop: 'glitch', value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}` });
+    const expectedClipPath = decl({
+      prop: 'clip-path',
+      value: `inset(${expectedOffsetTop} 0 ${expectedOffsetBottom} 0)`,
+    });
+    const expectedDeclaration = decl({
+      prop: 'glitch',
+      value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}`,
+    });
     expectedRule.append(expectedDeclaration);
     expectedRoot.append(expectedRule);
     const expectedResultCss = `@keyframes glitch-animation-before {
@@ -247,7 +258,10 @@ ${expectedSelector} {
 
   it('removes glitch declaration', () => {
     // Arrange
-    const expectedDeclaration = decl({ prop: 'glitch', value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}` });
+    const expectedDeclaration = decl({
+      prop: 'glitch',
+      value: `${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}`,
+    });
     expectedRule.append(expectedDeclaration);
     expectedRoot.append(expectedRule);
     const expectedResultCss = `${expectedSelector} {}`;

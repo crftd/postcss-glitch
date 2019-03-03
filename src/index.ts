@@ -8,6 +8,7 @@ import translator from './translator';
 
 const PLUGIN_NAME = 'postcss-glitch';
 
-export const initialize = () => translator;
+export const initialize = (): Function => translator;
 
+// @ts-ignore
 export default plugin(PLUGIN_NAME, initialize);

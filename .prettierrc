@@ -1,0 +1,16 @@
+{
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": ".editorconfig",
+      "options": { "parser": "yaml" }
+    },
+    {
+      "files": "LICENSE",
+      "options": { "parser": "markdown" }
+    }
+  ]
+}
