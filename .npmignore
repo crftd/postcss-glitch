@@ -16,3 +16,6 @@ jest-config.json
 .babelrc
 /src/
 /demo/
+tsconfig.json
+.prettierrc
+.prettierignore
