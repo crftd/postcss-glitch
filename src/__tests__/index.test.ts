@@ -3,16 +3,18 @@
  */
 
 import * as plugin from '..';
+import mockTranslator from '../translator';
 
 jest.mock('../translator');
 
-describe('index', () => {
-  it('initializes plugin', () => {
+describe('index', (): void => {
+  it('initializes plugin', (): void => {
     // Arrange
-    const mockTranslator = require.requireMock('../translator');
+
     // Act
     const actualPluginFunction = plugin.initialize();
+
     // Assert
-    expect(actualPluginFunction).toEqual(mockTranslator.default);
+    expect(actualPluginFunction).toEqual(mockTranslator);
   });
 });
