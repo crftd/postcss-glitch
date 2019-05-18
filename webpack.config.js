@@ -15,7 +15,7 @@ const plugins = [new webpack.NamedModulesPlugin()];
 if (!isRunningOnCi) plugins.push(new BundleAnalyzerPlugin());
 
 const config = {
-  devtool: isProd ? 'source-map' : 'eval-source-map',
+  devtool: isProd ? '' : 'eval-source-map',
   context: sourcePath,
   entry: {
     bundle: './index.ts',
