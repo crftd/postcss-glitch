@@ -23,7 +23,7 @@ jobs:
           repo: crftd/postcss-glitch
     - stage: github
       install:
-        - cd ./demos/parcel
+        - cd ./demos/simple
         - yarn install
       script:
         - yarn build
