@@ -24,7 +24,7 @@ const config = {
   output: {
     path: staticsPath,
     filename: 'index.js',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
   },
   resolve: {
     extensions: ['.js', '.ts'],
