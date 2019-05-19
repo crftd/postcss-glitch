@@ -11,4 +11,8 @@ const PLUGIN_NAME = 'postcss-glitch';
 export const initialize = (): Function => translator;
 
 // @ts-ignore
-export default plugin(PLUGIN_NAME, initialize);
+const glitchPlugin = plugin(PLUGIN_NAME, initialize);
+
+export default glitchPlugin;
+
+module.exports = glitchPlugin;
