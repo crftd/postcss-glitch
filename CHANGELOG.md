@@ -1,3 +1,9 @@
+#### 3.1.0 (2019-05-20)
+
+- Update webpack config for UMD. Fixes issues like this [#1026](https://github.com/postcss/postcss/issues/1026)
+- Reduced library size in 8 times
+- Support pt and px size units. % and em support is experimental
+
 #### 3.0.0 (2019-03-03)
 
 - Codebase moved to TypeScript
