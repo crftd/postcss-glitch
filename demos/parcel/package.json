@@ -1,0 +1,20 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "description": "Simple usage demo",
+  "main": "index.js",
+  "author": "Crash <hex22a@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "postcss-glitch": "3.0.0"
+  }
+}
