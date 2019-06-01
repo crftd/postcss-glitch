@@ -10,11 +10,11 @@
     "build": "parcel build --public-url='/postcss-glitch/' index.html"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
+    "@babel/core": "^7.4.5",
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {
     "autoprefixer": "^9.5.1",
-    "postcss-glitch": "^3.0.9"
+    "postcss-glitch": "^3.1.2"
   }
 }
