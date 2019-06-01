@@ -83,11 +83,11 @@ ${expectedSelector}::before, ${expectedSelector}::after {
 }
 ${expectedSelector}::before {
     text-shadow: -${expectedShadowOffset} 0 ${expectedFirstColor};
-    animation: glitch-animation-before alternate-reverse 3s infinite linear;
+    animation: glitch-animation-before alternate-reverse 3s infinite linear
 }
 ${expectedSelector}::after {
     text-shadow: ${expectedShadowOffset} 0 ${expectedSecondColor};
-    animation: glitch-animation-after alternate-reverse 2s infinite linear;
+    animation: glitch-animation-after alternate-reverse 2s infinite linear
 }`;
 
     // Act

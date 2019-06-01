@@ -20,11 +20,11 @@ export const addPseudo = (declaration: Declaration): void => {
   const beforeRule = rule({ selector: `${selector}::before` });
   beforeRule
     .append(decl({ prop: 'text-shadow', value: `-${shadowOffset} 0 ${firstColor}` }))
-    .append(decl({ prop: 'animation', value: 'glitch-animation-before alternate-reverse 3s infinite linear;' }));
+    .append(decl({ prop: 'animation', value: 'glitch-animation-before alternate-reverse 3s infinite linear' }));
   const afterRule = rule({ selector: `${selector}::after` });
   afterRule
     .append(decl({ prop: 'text-shadow', value: `${shadowOffset} 0 ${secondColor}` }))
-    .append(decl({ prop: 'animation', value: 'glitch-animation-after alternate-reverse 2s infinite linear;' }));
+    .append(decl({ prop: 'animation', value: 'glitch-animation-after alternate-reverse 2s infinite linear' }));
   const beforeAfterRule = rule({ selectors: [`${selector}::before`, `${selector}::after`] });
   beforeAfterRule
     .append(CONTENT_DECLARATION)
