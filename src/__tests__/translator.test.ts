@@ -2,7 +2,7 @@
  * Crafted by Crash on 29.11.17.
  */
 
-import { decl, rule, root, Root, Rule } from 'postcss';
+import { decl, root, Root, rule, Rule } from 'postcss';
 import * as translator from '../translator';
 
 jest.mock('../clip-path.builder');
@@ -83,11 +83,11 @@ ${expectedSelector}::before, ${expectedSelector}::after {
 }
 ${expectedSelector}::before {
     text-shadow: -${expectedShadowOffset} 0 ${expectedFirstColor};
-    animation: glitch-animation-before 3s infinite linear alternate-reverse;
+    animation: glitch-animation-before alternate-reverse 3s infinite linear;
 }
 ${expectedSelector}::after {
     text-shadow: ${expectedShadowOffset} 0 ${expectedSecondColor};
-    animation: glitch-animation-after 2s infinite linear alternate-reverse;
+    animation: glitch-animation-after alternate-reverse 2s infinite linear;
 }`;
 
     // Act
