@@ -1,3 +1,7 @@
+### 3.2.0 (2019-06-9)
+
+- Update demo page
+
 #### 3.1.0 (2019-05-20)
 
 - Update webpack config for UMD. Fixes issues like this [#1026](https://github.com/postcss/postcss/issues/1026)
