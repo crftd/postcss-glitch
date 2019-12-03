@@ -14,7 +14,7 @@ export const parseHeight = (height: string): [number, string] => [
 
 export const utils = { getOffsetTop, getOffsetBottom, parseHeight };
 
-export default (height: string, glitchHeight: number = 5): Declaration => {
+export default (height: string, glitchHeight = 5): Declaration => {
   const [parsedHeight, sizeUnit] = utils.parseHeight(height);
   const offsetTop = utils.getOffsetTop(parsedHeight);
   const offsetBottom = utils.getOffsetBottom(parsedHeight, offsetTop, glitchHeight);

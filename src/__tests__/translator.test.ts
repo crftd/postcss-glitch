@@ -2,12 +2,18 @@
  * Crafted by Crash on 29.11.17.
  */
 
-import { decl, root, Root, rule, Rule } from 'postcss';
-import * as translator from '../translator';
+import { decl, Declaration, root, Root, rule, Rule } from 'postcss';
+import Translator from '../translator';
+import mockClipPath from '../clip-path.builder';
 
 jest.mock('../clip-path.builder');
 
 describe('translator', () => {
+  const originalTranslator = {
+    addPseudo: Translator.addPseudo,
+    addKeyframes: Translator.addKeyframes,
+    removeDeclaration: Translator.removeDeclaration,
+  };
   const expectedSelector = '.foo';
   const expectedHeight = '48px';
   const expectedShadowOffset = '1px';
@@ -22,20 +28,10 @@ describe('translator', () => {
     expectedRule = rule({ selector: expectedSelector });
   });
 
-  it('translates parsed root', () => {
-    // Arrange
-    const expectedDeclarationName = translator.DECLARATION_NAME;
-
-    const fakeTranslate = (): void => {};
-
-    expectedRoot.walkDecls = jest.fn();
-    translator.utils.translate = fakeTranslate;
-
-    // Act
-    translator.default(expectedRoot);
-
-    // Assert
-    expect(expectedRoot.walkDecls).toHaveBeenCalledWith(expectedDeclarationName, fakeTranslate);
+  afterEach(() => {
+    Translator.addPseudo = originalTranslator.addPseudo;
+    Translator.addKeyframes = originalTranslator.addKeyframes;
+    Translator.removeDeclaration = originalTranslator.removeDeclaration;
   });
 
   it('translate declaration', () => {
@@ -49,12 +45,12 @@ describe('translator', () => {
     const mockAddKeyframes = jest.fn();
     const mockRemoveDeclaration = jest.fn();
 
-    translator.utils.addPseudo = mockAddPseudo;
-    translator.utils.addKeyframes = mockAddKeyframes;
-    translator.utils.removeDeclaration = mockRemoveDeclaration;
+    Translator.addPseudo = mockAddPseudo;
+    Translator.addKeyframes = mockAddKeyframes;
+    Translator.removeDeclaration = mockRemoveDeclaration;
 
     // Act
-    translator.translate(expectedDeclaration);
+    Translator.translate(expectedDeclaration);
 
     // Assert
     expect(mockAddPseudo).toHaveBeenCalledWith(expectedDeclaration);
@@ -91,7 +87,7 @@ ${expectedSelector}::after {
 }`;
 
     // Act
-    translator.addPseudo(expectedDeclaration);
+    Translator.addPseudo(expectedDeclaration);
 
     // Assert
     expect(expectedRoot.toString()).toEqual(expectedResultCss);
@@ -99,7 +95,6 @@ ${expectedSelector}::after {
 
   it('adds 2 @keyframes animation with 21 steps at root and glitch height 5px', () => {
     // Arrange
-    const expectedClipPathNumber = 42;
     const expectedOffsetTop = '24px';
     const expectedOffsetBottom = '19px';
     const expectedClipPath = decl({
@@ -112,148 +107,13 @@ ${expectedSelector}::after {
     });
     expectedRule.append(expectedDeclaration);
     expectedRoot.append(expectedRule);
-    const expectedResultCss = `@keyframes glitch-animation-before {
-    0% {
-        ${expectedClipPath.toString()}
-    }
-    5% {
-        ${expectedClipPath.toString()}
-    }
-    10% {
-        ${expectedClipPath.toString()}
-    }
-    15% {
-        ${expectedClipPath.toString()}
-    }
-    20% {
-        ${expectedClipPath.toString()}
-    }
-    25% {
-        ${expectedClipPath.toString()}
-    }
-    30% {
-        ${expectedClipPath.toString()}
-    }
-    35% {
-        ${expectedClipPath.toString()}
-    }
-    40% {
-        ${expectedClipPath.toString()}
-    }
-    45% {
-        ${expectedClipPath.toString()}
-    }
-    50% {
-        ${expectedClipPath.toString()}
-    }
-    55% {
-        ${expectedClipPath.toString()}
-    }
-    60% {
-        ${expectedClipPath.toString()}
-    }
-    65% {
-        ${expectedClipPath.toString()}
-    }
-    70% {
-        ${expectedClipPath.toString()}
-    }
-    75% {
-        ${expectedClipPath.toString()}
-    }
-    80% {
-        ${expectedClipPath.toString()}
-    }
-    85% {
-        ${expectedClipPath.toString()}
-    }
-    90% {
-        ${expectedClipPath.toString()}
-    }
-    95% {
-        ${expectedClipPath.toString()}
-    }
-    100% {
-        ${expectedClipPath.toString()}
-    }
-}
-@keyframes glitch-animation-after {
-    0% {
-        ${expectedClipPath.toString()}
-    }
-    5% {
-        ${expectedClipPath.toString()}
-    }
-    10% {
-        ${expectedClipPath.toString()}
-    }
-    15% {
-        ${expectedClipPath.toString()}
-    }
-    20% {
-        ${expectedClipPath.toString()}
-    }
-    25% {
-        ${expectedClipPath.toString()}
-    }
-    30% {
-        ${expectedClipPath.toString()}
-    }
-    35% {
-        ${expectedClipPath.toString()}
-    }
-    40% {
-        ${expectedClipPath.toString()}
-    }
-    45% {
-        ${expectedClipPath.toString()}
-    }
-    50% {
-        ${expectedClipPath.toString()}
-    }
-    55% {
-        ${expectedClipPath.toString()}
-    }
-    60% {
-        ${expectedClipPath.toString()}
-    }
-    65% {
-        ${expectedClipPath.toString()}
-    }
-    70% {
-        ${expectedClipPath.toString()}
-    }
-    75% {
-        ${expectedClipPath.toString()}
-    }
-    80% {
-        ${expectedClipPath.toString()}
-    }
-    85% {
-        ${expectedClipPath.toString()}
-    }
-    90% {
-        ${expectedClipPath.toString()}
-    }
-    95% {
-        ${expectedClipPath.toString()}
-    }
-    100% {
-        ${expectedClipPath.toString()}
-    }
-}
-${expectedSelector} {
-    glitch: ${expectedHeight} ${expectedFirstColor} ${expectedSecondColor} ${expectedShadowOffset}
-}`;
-    const mockClipPath = require.requireMock('../clip-path.builder');
-    mockClipPath.default = jest.fn(() => expectedClipPath.clone());
+    (mockClipPath as jest.Mock).mockImplementation((): Declaration => expectedClipPath.clone());
 
     // Act
-    translator.addKeyframes(expectedDeclaration);
+    Translator.addKeyframes(expectedDeclaration);
 
     // Assert
-    expect(mockClipPath.default).toHaveBeenCalledTimes(expectedClipPathNumber);
-    expect(expectedRoot.toString()).toEqual(expectedResultCss);
+    expect(expectedRoot.toString()).toMatchSnapshot();
   });
 
   it('removes glitch declaration', () => {
@@ -267,7 +127,7 @@ ${expectedSelector} {
     const expectedResultCss = `${expectedSelector} {}`;
 
     // Act
-    translator.removeDeclaration(expectedDeclaration);
+    Translator.removeDeclaration(expectedDeclaration);
 
     // Assert
     expect(expectedRoot.toString()).toEqual(expectedResultCss);
