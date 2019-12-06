@@ -6,9 +6,7 @@
   "author": "Crash <hex22a@gmail.com>",
   "license": "MIT",
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "last 2 Chrome versions"
   ],
   "scripts": {
     "dev": "parcel index.html",
@@ -20,6 +18,6 @@
   },
   "dependencies": {
     "autoprefixer": "^9.7.3",
-    "postcss-glitch": "^3.2.3"
+    "postcss-glitch": "^3.2.4"
   }
 }
