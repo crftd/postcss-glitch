@@ -17,7 +17,7 @@ jobs:
         edge: true
         skip_cleanup: true
         email: hex22a@gmail.com
-        api_key:
+        api_token:
           secure: Gv4fwux0xEQUIpwKK/i+w1GdwAq8pjSm5o7rzhRQsAVCRAEeOeTDqxijK2AO3obPcaQiCYyjuO6tXd8GEe2mQSQqXBkkx5ypugzMyFmUFA2eh1GUJyxWTjZRlMXB1v3oPjTt9XFxdKJXcxay5PC5yNqyaLENSaPYlhwJqOhvloeQmfRgmvjjavgbVp8+pjl+Ngg1xMwLs7f1UYQFhqLZR9xBFAk6UaQDu0LxnjTBQuATTsGiyl3pT5374rzpu/VroFaKa+34JjsNKjtvplYheMMnLEkg5sjrhXG0KjuuJrsq1/pxg138t90SFfj8HfLL+EC1l69ButRSxvDK3NCsrUNi77No9QbeSEimvHE9cg62NsgzYrH7YlogVRIXYu7T082wDEDw/TtAEKaAkMiahWgRDLbvOVmivQ6qwzK2P+rdu1P8kuO8LAyHCh9uUDSpjWXwDmydBA56l+dC3s2iaKES8wAOXZpCcCYepJa+Bo4CIBzHAM5U06327QmPCYz4UW5/q4+7omNhgzBhmR2NJijyGpU52O4X+jkPcEQAJO/UjDk0lX7Bt2WztGEPKJzRCNU+mLVMXBhcMKT9YRW53syIHGQO0zJ75dKvBwkCUfI2Oo9ZaTPStiMYBulyCzd1DtsMN3CPsjt2T3uez0izqfGYqL136m2TQVHbuTAeZL0=
         on:
           tags: true
