@@ -14,10 +14,11 @@ jobs:
       script: yarn build:ci
       deploy:
         provider: npm
+        edge: true
         skip_cleanup: true
         email: hex22a@gmail.com
         api_key:
-          secure: 'cLO1WbNKpb597kGtFk+p7gXrB1F7bfDXutejn2+MgDzDmRNbrINBSPUaABjjjdFF/9YHuODg+RCmXoa70Ga5RoxhtsS+ycweR2vqqWWxlxuiGiS44mRUlxBAjMQ/d1Rq8h5gCIVlFqK/KujEu3s6zb9nNny2Xqo93fdWKJEQTo5AKniAkqfbFl1KoAxIwMH5b2cI+V1MXpHfLOV08FSnjxfmdFa4ryYmjFx2/NAJxZxjpNnTob//djiwMGwi5MNCMdFW7b8o4jqdMFcOw2tJO2UU3nW+Jm1kxrT+ipIU4C9N5DbcgrV95CQwT26IcLp6FwRyiGEIl2Jan8AZyg6eYwZmkoCiyOPyVQxLoc9TXJTDv3V+CyUg0S8lKsKMy5Ky0c7TcO+9vuWqkcBL64Euwr80rF/j8JAYlVXVwflOfqq0OLpgCyXZRF/AtAuVAJXHDGJkMkPdn2BLnCb6U85HzLpaaSeP/z50bZtyaifZWvUKvslRohGFoZFdLh9T1nPYnyaDobcD56OWe5h9KfhzDTsnji5hO67559XBSlXDVhvwnwuvUJtigy3gU/nwhd8HKUaJe+W+6YTGdBS21U1XAUe5KRy//DXOx7GvFE8PBPNcsc14SobJ10Ckr/+Dn+u6XygN82dN42ySrTZ3VB3ATHSGs2MNkjBX+IiLFo9KUUM='
+          secure: Gv4fwux0xEQUIpwKK/i+w1GdwAq8pjSm5o7rzhRQsAVCRAEeOeTDqxijK2AO3obPcaQiCYyjuO6tXd8GEe2mQSQqXBkkx5ypugzMyFmUFA2eh1GUJyxWTjZRlMXB1v3oPjTt9XFxdKJXcxay5PC5yNqyaLENSaPYlhwJqOhvloeQmfRgmvjjavgbVp8+pjl+Ngg1xMwLs7f1UYQFhqLZR9xBFAk6UaQDu0LxnjTBQuATTsGiyl3pT5374rzpu/VroFaKa+34JjsNKjtvplYheMMnLEkg5sjrhXG0KjuuJrsq1/pxg138t90SFfj8HfLL+EC1l69ButRSxvDK3NCsrUNi77No9QbeSEimvHE9cg62NsgzYrH7YlogVRIXYu7T082wDEDw/TtAEKaAkMiahWgRDLbvOVmivQ6qwzK2P+rdu1P8kuO8LAyHCh9uUDSpjWXwDmydBA56l+dC3s2iaKES8wAOXZpCcCYepJa+Bo4CIBzHAM5U06327QmPCYz4UW5/q4+7omNhgzBhmR2NJijyGpU52O4X+jkPcEQAJO/UjDk0lX7Bt2WztGEPKJzRCNU+mLVMXBhcMKT9YRW53syIHGQO0zJ75dKvBwkCUfI2Oo9ZaTPStiMYBulyCzd1DtsMN3CPsjt2T3uez0izqfGYqL136m2TQVHbuTAeZL0=
         on:
           tags: true
           repo: crftd/postcss-glitch
