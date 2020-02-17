@@ -17,7 +17,7 @@ jobs:
         skip_cleanup: true
         email: hex22a@gmail.com
         api_key:
-          secure: I6SEYaPaHVEcGlcRqCy7rrSMS9elJkyW7pkyzXF7ee/IbxMDiov8dO90Ggab3U7TCIs044Fes0aXZLLeVCVestjx5+b5Zk+i7hL77dwu4feRqJcryEWN9vaHe2Tl/GXTZ1VGW6aMq4NcNnZlFOOvMDHgv9YPf/8vkIutCJYBh4P0y3Cl5SEi65chCPe5BfAcrk8OUHDVWfmOQ+zu7e5Wlnb5AH6FEMmONXJn1EMJK7WFTdPhmQQcty+wOGXb0iBpMY7eii+BFWlWiJj4e7iml2a0p0D88KzpobijBW1zGzViMMNImzNKIIJ8NYBlLqdXDOMlbLQyPUyg78QpySbP7dkRLkyEUTbhCPf9FrtHoCpCSm35AIBdO9eXbDa0hl1dz1iP9LRKtTt6uH9oWWg+YoBUUAvHX9fTOeza3vO69dQfJtFqKmohZhVTIAu1kps6b3XL/oQDo19vPDpldxBjgSo5W8IYa0YdAu5bpbW/2WxCWGgos3nvP3X7eqj6eNbiBvF/VBFYt+nuNOZHrCJ0yWWgSNwdWlJckrsAlm2LTT0WQ2Ke8eQbltT8/KjuY5bkm0Rotv/Nijkwqhe5zn4KKfr0e6Lm7zVPzMI75mqz08WoXaD8l5+9jJ+e7OoYDv6XYtfS4DfHZUAotdoXFOomMg08xHMeOZ6UxdaVBBFd2Yc=
+          secure: 'cLO1WbNKpb597kGtFk+p7gXrB1F7bfDXutejn2+MgDzDmRNbrINBSPUaABjjjdFF/9YHuODg+RCmXoa70Ga5RoxhtsS+ycweR2vqqWWxlxuiGiS44mRUlxBAjMQ/d1Rq8h5gCIVlFqK/KujEu3s6zb9nNny2Xqo93fdWKJEQTo5AKniAkqfbFl1KoAxIwMH5b2cI+V1MXpHfLOV08FSnjxfmdFa4ryYmjFx2/NAJxZxjpNnTob//djiwMGwi5MNCMdFW7b8o4jqdMFcOw2tJO2UU3nW+Jm1kxrT+ipIU4C9N5DbcgrV95CQwT26IcLp6FwRyiGEIl2Jan8AZyg6eYwZmkoCiyOPyVQxLoc9TXJTDv3V+CyUg0S8lKsKMy5Ky0c7TcO+9vuWqkcBL64Euwr80rF/j8JAYlVXVwflOfqq0OLpgCyXZRF/AtAuVAJXHDGJkMkPdn2BLnCb6U85HzLpaaSeP/z50bZtyaifZWvUKvslRohGFoZFdLh9T1nPYnyaDobcD56OWe5h9KfhzDTsnji5hO67559XBSlXDVhvwnwuvUJtigy3gU/nwhd8HKUaJe+W+6YTGdBS21U1XAUe5KRy//DXOx7GvFE8PBPNcsc14SobJ10Ckr/+Dn+u6XygN82dN42ySrTZ3VB3ATHSGs2MNkjBX+IiLFo9KUUM='
         on:
           tags: true
           repo: crftd/postcss-glitch
