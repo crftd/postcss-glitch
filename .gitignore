@@ -4,3 +4,11 @@ node_modules/
 dist
 yarn.lock
 yarn-error.log
+
+# yarn v2
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
