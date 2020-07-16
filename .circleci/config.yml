@@ -7,6 +7,7 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - yarn set version berry
       - node/install-packages:
           pkg-manager: yarn
       - run:
