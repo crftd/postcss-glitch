@@ -40,6 +40,9 @@ workflows:
     jobs:
       - test
       - npm:
+          filters:
+            tags:
+              only: /^v?\d+.\d+.\d+/
           context: publish
           requires:
             - test
