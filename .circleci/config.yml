@@ -7,10 +7,8 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - run:
-          command: yarn set version berry
       - node/install-packages:
-          pkg-manager: yarn
+          override-ci-command: yarn install --immutable
       - run:
           command: yarn run test
           name: Run YARN tests
