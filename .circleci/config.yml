@@ -13,7 +13,26 @@ jobs:
       - run:
           command: yarn run test
           name: Run YARN tests
+      - persist_to_workspace:
+					root: ~/repo
+					paths: .
+	npm:
+		executor:
+				name: node/default
+		steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+					name: Authenticate with registry
+					command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+			- run:
+					name: Publish package
+					command: npm publish
+      - persist_to_workspace:
+					root: ~/repo
+					paths: .
 workflows:
   test-and-deploy:
     jobs:
       - test
+			- npm
