@@ -40,5 +40,6 @@ workflows:
     jobs:
       - test
       - npm:
+          context: publish
           requires:
             - test
