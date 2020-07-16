@@ -18,7 +18,7 @@ jobs:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yarn<Paste>
+            - ~/.cache/yarn
       - run:
           command: yarn run test
           name: Run YARN tests

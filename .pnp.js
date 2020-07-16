@@ -78,7 +78,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'virtual:1192987e46652f863ac1362b26ac1fea94ec27bc900494d46d59a54ac61bd93ac206d19bf941f1bebd07ba2ebc41c47dafab308fd0d9d25ee6bc62de5dd7107f#npm:8.1.0',
         ],
         ['babel-polyfill', 'npm:6.26.0'],
-        ['coveralls', 'npm:3.1.0'],
         ['cypress', 'npm:4.10.0'],
         [
           'cypress-image-snapshot',
@@ -184,7 +183,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:1192987e46652f863ac1362b26ac1fea94ec27bc900494d46d59a54ac61bd93ac206d19bf941f1bebd07ba2ebc41c47dafab308fd0d9d25ee6bc62de5dd7107f#npm:8.1.0',
                   ],
                   ['babel-polyfill', 'npm:6.26.0'],
-                  ['coveralls', 'npm:3.1.0'],
                   ['cypress', 'npm:4.10.0'],
                   [
                     'cypress-image-snapshot',
@@ -7055,26 +7053,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
-          'coveralls',
-          [
-            [
-              'npm:3.1.0',
-              {
-                packageLocation: './.yarn/cache/coveralls-npm-3.1.0-598f5463a9-bac2998bf3.zip/node_modules/coveralls/',
-                packageDependencies: [
-                  ['coveralls', 'npm:3.1.0'],
-                  ['js-yaml', 'npm:3.14.0'],
-                  ['lcov-parse', 'npm:1.0.0'],
-                  ['log-driver', 'npm:1.2.7'],
-                  ['minimist', 'npm:1.2.5'],
-                  ['request', 'npm:2.88.2'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
           'create-ecdh',
           [
             [
@@ -13213,20 +13191,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
-          'lcov-parse',
-          [
-            [
-              'npm:1.0.0',
-              {
-                packageLocation:
-                  './.yarn/cache/lcov-parse-npm-1.0.0-c94e390b1c-7747ea686f.zip/node_modules/lcov-parse/',
-                packageDependencies: [['lcov-parse', 'npm:1.0.0']],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
           'leven',
           [
             [
@@ -13573,20 +13537,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/lodash.uniq-npm-4.5.0-7c270dca85-47cb25b59b.zip/node_modules/lodash.uniq/',
                 packageDependencies: [['lodash.uniq', 'npm:4.5.0']],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'log-driver',
-          [
-            [
-              'npm:1.2.7',
-              {
-                packageLocation:
-                  './.yarn/cache/log-driver-npm-1.2.7-1d1901a631-b4355545c3.zip/node_modules/log-driver/',
-                packageDependencies: [['log-driver', 'npm:1.2.7']],
                 linkType: 'HARD',
               },
             ],
@@ -16042,7 +15992,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:1192987e46652f863ac1362b26ac1fea94ec27bc900494d46d59a54ac61bd93ac206d19bf941f1bebd07ba2ebc41c47dafab308fd0d9d25ee6bc62de5dd7107f#npm:8.1.0',
                   ],
                   ['babel-polyfill', 'npm:6.26.0'],
-                  ['coveralls', 'npm:3.1.0'],
                   ['cypress', 'npm:4.10.0'],
                   [
                     'cypress-image-snapshot',
