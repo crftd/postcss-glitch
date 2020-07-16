@@ -17,8 +17,6 @@ jobs:
           root: ~/repo
           paths: .
   npm:
-    requires:
-      - test
     executor:
       name: node/default
     steps:
@@ -37,4 +35,6 @@ workflows:
   test-and-deploy:
     jobs:
       - test
-      - npm
+      - npm:
+          requires:
+            - test
