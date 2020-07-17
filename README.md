@@ -3,7 +3,7 @@
 Glitch effect implemented with PostCSS. With this plugin you can easily add glitch effect to any text!
 
 [![npm version](https://badge.fury.io/js/postcss-glitch.svg)](https://badge.fury.io/js/postcss-glitch)
-[![Build Status](https://travis-ci.org/crftd/postcss-glitch.svg?branch=master)](https://travis-ci.org/crftd/postcss-glitch)
+[![CircleCI](https://circleci.com/gh/crftd/postcss-glitch/tree/master.svg?style=svg)](https://circleci.com/gh/crftd/postcss-glitch/tree/master.svg?style=svg)
 
 ![animation](http://g.recordit.co/COmXbvzGfg.gif)
 
