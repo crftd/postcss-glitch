@@ -4,8 +4,6 @@ Glitch effect implemented with PostCSS. With this plugin you can easily add glit
 
 [![npm version](https://badge.fury.io/js/postcss-glitch.svg)](https://badge.fury.io/js/postcss-glitch)
 [![Build Status](https://travis-ci.org/crftd/postcss-glitch.svg?branch=master)](https://travis-ci.org/crftd/postcss-glitch)
-[![Coverage Status](https://coveralls.io/repos/github/crftd/postcss-glitch/badge.svg?branch=master)](https://coveralls.io/github/crftd/postcss-glitch?branch=master)
-[![Dependencies](https://david-dm.org/crftd/postcss-glitch.svg)](https://david-dm.org/)
 
 ![animation](http://g.recordit.co/COmXbvzGfg.gif)
 
