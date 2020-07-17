@@ -34,7 +34,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: yarn npm publish
+          command: npm publish
       - persist_to_workspace:
           root: ~/repo
           paths: .
