@@ -28,7 +28,7 @@ jobs:
           at: ~/repo
       - run:
           name: Build
-          run: yarn build:ci
+          command: yarn build:ci
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
