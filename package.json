@@ -24,10 +24,7 @@
     "jest": "jest --config=jest-config.json",
     "build:ci": "CI=true yarn build",
     "build:dev": "NODE_ENV=development webpack --mode=development",
-    "build": "NODE_ENV=production webpack --mode=production",
-    "deploy:major": "yarn version --major && git push --follow-tags",
-    "deploy:minor": "yarn version --minor && git push --follow-tags",
-    "deploy:patch": "yarn version --patch && git push --follow-tags"
+    "build": "NODE_ENV=production webpack --mode=production"
   },
   "engines": {
     "node": ">=12"
