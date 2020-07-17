@@ -16,7 +16,11 @@ jest-config.json
 .babelrc
 /src/
 /demo/
+/demos/
 tsconfig.json
 .prettierrc
 .prettierignore
 .github
+.yarn
+.circleci
+cypress
