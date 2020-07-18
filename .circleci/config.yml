@@ -35,9 +35,6 @@ jobs:
       - run:
           name: Publish package
           command: npm publish
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
 workflows:
   test-and-deploy:
     jobs:
