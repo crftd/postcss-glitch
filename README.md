@@ -7,7 +7,7 @@ Glitch effect implemented with PostCSS. With this plugin you can easily add glit
 
 ![animation](http://g.recordit.co/COmXbvzGfg.gif)
 
-Check out our [demo page](https://crftd.github.io/postcss-glitch/)
+Check out our [demo page](https://crftd.github.io/postcss-glitch/) ([source](https://github.com/crftd/postcss-glitch-demos))
 
 ## Installation
 
@@ -161,16 +161,6 @@ transforms to
 ```
 
 And yeah it also works with CSSModules!
-
-## Deployment
-
-### GitHub Pages
-
-To encrypt gh pages key for repo do
-
-```bash
-travis encrypt -r crftd/postcss-glitch --org
-```
 
 ## Contributing
 
