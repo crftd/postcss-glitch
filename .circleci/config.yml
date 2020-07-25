@@ -46,8 +46,8 @@ workflows:
           filters:
             tags:
               only: /^v?\d+.\d+.\d+/
-              branches:
-                ignore: '*'
+            branches:
+              ignore: /.*/
           context: publish
           requires:
             - test
