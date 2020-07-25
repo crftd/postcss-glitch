@@ -38,11 +38,16 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
-      - test
+      - test:
+          filters: # required since `npm` has tag filters AND requires `test`
+            tags:
+              only: /.*/
       - npm:
           filters:
             tags:
               only: /^v?\d+.\d+.\d+/
+              branches:
+                ignore: /.*/
           context: publish
           requires:
             - test
