@@ -14,6 +14,8 @@ const plugins = [new webpack.NamedModulesPlugin()];
 
 if (!isRunningOnCi) plugins.push(new BundleAnalyzerPlugin());
 
+console.log('rr', require.resolve('postcss'));
+
 const config = {
   devtool: isProd ? '' : 'eval-source-map',
   context: sourcePath,
@@ -29,7 +31,6 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.ts'],
-    modules: [`${__dirname}/node_modules`, sourcePath],
   },
   module: {
     rules: [

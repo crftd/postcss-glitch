@@ -1,0 +1,24 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "description": "Simple usage demo",
+  "main": "index.html",
+  "author": "Crash <hex22a@gmail.com>",
+  "license": "MIT",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build --public-url='/postcss-glitch/' index.html"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "babel-types": "^6.26.0",
+    "parcel": "next"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.5",
+    "postcss-glitch": "^3.2.15"
+  }
+}

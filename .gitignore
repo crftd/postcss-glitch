@@ -12,3 +12,6 @@ yarn-error.log
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+
+# custom
+.parcel-cache
