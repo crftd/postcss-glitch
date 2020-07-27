@@ -24,6 +24,7 @@ jobs:
   npm:
     <<: *defaults
     steps:
+      - run: snap install yq
       - attach_workspace:
           at: ~/repo
       - run:
@@ -31,7 +32,7 @@ jobs:
           command: yarn workspace postcss-glitch build:ci
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+          command: cat root_yarnrc.template.yml | yq w - 'npmRegistries."https://registry.yarnpkg.com".npmAuthToken' $npm_TOKEN > ../.yarnrc.yml
       - run:
           name: Publish package
           command: yarn workspace postcss-glitch npm publish
