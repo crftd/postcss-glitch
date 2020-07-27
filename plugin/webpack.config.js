@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack');
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const sourcePath = `${__dirname}/src`;
@@ -13,8 +14,6 @@ const isRunningOnCi = process.env.CI || false;
 const plugins = [new webpack.NamedModulesPlugin()];
 
 if (!isRunningOnCi) plugins.push(new BundleAnalyzerPlugin());
-
-console.log('rr', require.resolve('postcss'));
 
 const config = {
   devtool: isProd ? '' : 'eval-source-map',
@@ -31,13 +30,17 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.ts'],
+    plugins: [ PnpWebpackPlugin ],
+  },
+  resolveLoader: {
+    plugins: [ PnpWebpackPlugin.moduleLoader(module) ],
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
         include: sourcePath,
-        loader: 'babel-loader',
+        loader: require.resolve('babel-loader'),
       },
     ],
   },

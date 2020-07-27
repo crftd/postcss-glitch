@@ -23,8 +23,8 @@
     "test": "jest --ci --config=jest-config.json",
     "jest": "jest --config=jest-config.json",
     "build:ci": "CI=true yarn build",
-    "build:dev": "NODE_ENV=development webpack --mode=development",
-    "build": "NODE_ENV=production webpack --mode=production"
+    "build:dev": "NODE_ENV=development webpack-cli --mode=development",
+    "build": "NODE_ENV=production webpack-cli --mode=production"
   },
   "engines": {
     "node": ">=12"
@@ -67,6 +67,7 @@
     "eslint-plugin-import": "^2.22.0",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "pnp-webpack-plugin": "^1.6.4",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
     "size-limit": "^4.5.4",

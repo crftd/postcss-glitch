@@ -16,7 +16,7 @@ jobs:
           name: Install Dependencies
           command: yarn install --immutable
       - run:
-          command: yarn run test
+          command: yarn workspace postcss-glitch run test
           name: Run YARN tests
       - persist_to_workspace:
           root: ~/repo
@@ -28,13 +28,21 @@ jobs:
           at: ~/repo
       - run:
           name: Build
-          command: yarn build:ci
+          command: yarn workspace postcss-glitch build:ci
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: yarn workspace postcss-glitch npm publish
+  gh-pages:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build
+          command: yarn workspace simple build
 workflows:
   test-and-deploy:
     jobs:
@@ -43,6 +51,15 @@ workflows:
             tags:
               only: /.*/
       - npm:
+          filters:
+            tags:
+              only: /^v?\d+.\d+.\d+/
+            branches:
+              ignore: /.*/
+          context: publish
+          requires:
+            - test
+      - gh-pages:
           filters:
             tags:
               only: /^v?\d+.\d+.\d+/
