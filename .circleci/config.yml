@@ -24,10 +24,10 @@ jobs:
   npm:
     <<: *defaults
     steps:
-      - run: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64
-      - run: sudo add-apt-repository ppa:rmescandon
-      - run: sudo apt update
-      - run: sudo apt install yq -y
+      - run: apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64
+      - run: add-apt-repository ppa:rmescandon
+      - run: apt update
+      - run: apt install yq -y
       - attach_workspace:
           at: ~/repo
       - run:
