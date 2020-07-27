@@ -26,7 +26,7 @@ jobs:
     steps:
       - run:
           name: Install yq
-          command: sudo apt update && sudo apt install snapd && snap install yq
+          command: snap install yq
       - attach_workspace:
           at: ~/repo
       - run:

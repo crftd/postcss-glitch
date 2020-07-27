@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "autoprefixer": "^9.8.5",
-    "postcss-glitch": "^3.2.22"
+    "postcss-glitch": "^3.2.23"
   }
 }
