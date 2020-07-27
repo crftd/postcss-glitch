@@ -10999,7 +10999,7 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"postcss-glitch@^3.2.30, postcss-glitch@workspace:plugin":
+"postcss-glitch@^3.2.31, postcss-glitch@workspace:plugin":
   version: 0.0.0-use.local
   resolution: "postcss-glitch@workspace:plugin"
   dependencies:
@@ -12599,7 +12599,7 @@ fsevents@^1.2.7:
     autoprefixer: ^9.8.5
     babel-types: ^6.26.0
     parcel: next
-    postcss-glitch: ^3.2.30
+    postcss-glitch: ^3.2.31
   languageName: unknown
   linkType: soft
 
