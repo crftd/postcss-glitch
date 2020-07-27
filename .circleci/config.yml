@@ -25,7 +25,7 @@ jobs:
     <<: *defaults
     steps:
       - run: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64
-      - run: sudo add-apt-repository ppa:rmescandon
+      - run: sudo add-apt-repository ppa:rmescandon -y
       - run: sudo apt update
       - run: sudo apt install yq -y
       - attach_workspace:
