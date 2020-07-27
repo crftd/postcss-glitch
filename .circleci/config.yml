@@ -24,11 +24,12 @@ jobs:
   npm:
     <<: *defaults
     steps:
-      - run: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64
-      - run: sudo add-apt-repository ppa:rmescandon -y
-      - run: sudo apt upgrade -y
-      - run: sudo apt update
-      - run: sudo apt install yq -y
+      - run:
+          name: Install yq
+          command: |
+            wget https://github.com/mikefarah/yq/releases/download/2.4.0/yq_linux_386
+            sudo mv yq_linux_386 /usr/local/bin/yq
+            sudo chmod +x /usr/local/bin/yq
       - attach_workspace:
           at: ~/repo
       - run:
