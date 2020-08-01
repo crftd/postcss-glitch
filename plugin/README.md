@@ -18,7 +18,7 @@ yarn add postcss-glitch
 You can use `.postcssrc.js` to add plugin to your project just like this:
 
 ```javascript
-// .postcssrc.js
+// postcss.config.js.js
 
 module.exports = {
 	plugins: {
