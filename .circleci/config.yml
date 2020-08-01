@@ -50,9 +50,8 @@ jobs:
           name: Build
           command: yarn workspace simple build
       - run:
-          name: Install and configure dependencies
+          name: Configure GitHub deployer user
           command: |
-            npm install -g --silent gh-pages
             git config user.email "hex22a@gmail.com"
             git config user.name "crash-o-matic"
       - add_ssh_keys:
@@ -60,7 +59,7 @@ jobs:
             - "c4:94:5d:ec:82:90:0a:b8:bd:4e:2e:fa:03:e7:19:8e"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --message "[skip ci] Updates" --dist demos/simple/dist
+          command: yarn workspace simlpe deploy
 workflows:
   test-and-deploy:
     jobs:

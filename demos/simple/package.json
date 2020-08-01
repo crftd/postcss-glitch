@@ -1,6 +1,6 @@
 {
   "name": "simple",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple usage demo",
   "main": "index.html",
   "author": "Crash <hex22a@gmail.com>",
@@ -10,11 +10,13 @@
   ],
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build --public-url='/postcss-glitch/' index.html"
+    "build": "parcel build --public-url='/postcss-glitch/' index.html",
+    "deploy": "gh-pages --message \"[skip ci] Updates\" --dist dist"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "babel-types": "^6.26.0",
+    "gh-pages": "^3.1.0",
     "parcel": "next"
   },
   "dependencies": {
