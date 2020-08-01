@@ -49,6 +49,18 @@ jobs:
       - run:
           name: Build
           command: yarn workspace simple build
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages
+            git config user.email "hex22a@gmail.com"
+            git config user.name "crash-o-matic"
+      - add_ssh_keys:
+          fingerprints:
+            - "c4:94:5d:ec:82:90:0a:b8:bd:4e:2e:fa:03:e7:19:8e"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --message "[skip ci] Updates" --dist demos/simple/dist
 workflows:
   test-and-deploy:
     jobs:
@@ -68,7 +80,7 @@ workflows:
       - gh-pages:
           filters:
             tags:
-              only: /^v?\d+.\d+.\d+$/
+              only: /^(demo-)?v?\d+.\d+.\d+$/
             branches:
               ignore: /.*/
           context: publish
