@@ -16,7 +16,7 @@ const isRunningOnCi = process.env.CI || false;
 const plugins = [
   new webpack.NamedModulesPlugin(),
   new HtmlWebpackPlugin({  // Also generate a test.html
-    filename: 'test.html',
+    filename: 'index.html',
     base: 'postcss-glitch',
     template: './index.html'
   }),
