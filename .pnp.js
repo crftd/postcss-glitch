@@ -12430,6 +12430,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["postcss-glitch", [
+        ["npm:3.2.34", {
+          "packageLocation": "./.yarn/cache/postcss-glitch-npm-3.2.34-bfc82c29fb-7ca5440d3c.zip/node_modules/postcss-glitch/",
+          "packageDependencies": [
+            ["postcss-glitch", "npm:3.2.34"],
+            ["postcss", "npm:7.0.32"]
+          ],
+          "linkType": "HARD",
+        }],
         ["workspace:plugin", {
           "packageLocation": "./plugin/",
           "packageDependencies": [
@@ -14137,7 +14145,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "npm:9.8.5"],
             ["babel-types", "npm:6.26.0"],
             ["parcel", "npm:2.0.0-beta.1"],
-            ["postcss-glitch", "workspace:plugin"]
+            ["postcss-glitch", "npm:3.2.34"]
           ],
           "linkType": "SOFT",
         }]

@@ -10999,7 +10999,16 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"postcss-glitch@^3.2.34, postcss-glitch@workspace:plugin":
+"postcss-glitch@npm:latest":
+  version: 3.2.34
+  resolution: "postcss-glitch@npm:3.2.34"
+  dependencies:
+    postcss: ^7.0.32
+  checksum: 7ca5440d3ca6237e579ebb02575536bc33c587ee1133e103aff42f1d2fd4df7f69c5bc3d1f09d1617cb738c7232544b475613e761d740af302c8638f87b5c7ea
+  languageName: node
+  linkType: hard
+
+"postcss-glitch@workspace:plugin":
   version: 0.0.0-use.local
   resolution: "postcss-glitch@workspace:plugin"
   dependencies:
@@ -12599,7 +12608,7 @@ fsevents@^1.2.7:
     autoprefixer: ^9.8.5
     babel-types: ^6.26.0
     parcel: next
-    postcss-glitch: ^3.2.34
+    postcss-glitch: latest
   languageName: unknown
   linkType: soft
 
