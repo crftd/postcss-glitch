@@ -68,7 +68,7 @@ workflows:
       - gh-pages:
           filters:
             tags:
-              only: ^(demo-)?v?\d+.\d+.\d+
+              only: /^(demo-)?v?\d+.\d+.\d+/
             branches:
               ignore: /.*/
           context: publish
