@@ -56,7 +56,7 @@ jobs:
             git config user.name "crash-o-matic"
       - add_ssh_keys:
           fingerprints:
-            - "c4:94:5d:ec:82:90:0a:b8:bd:4e:2e:fa:03:e7:19:8e"
+            - "f5:85:4d:08:5f:83:a1:0c:42:fb:63:5f:98:4f:03:5a"
       - run:
           name: Deploy docs to gh-pages branch
           command: yarn workspace simple deploy
