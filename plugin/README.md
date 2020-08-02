@@ -3,7 +3,6 @@
 Glitch effect implemented with PostCSS. With this plugin you can easily add glitch effect to any text!
 
 [![npm version](https://badge.fury.io/js/postcss-glitch.svg)](https://badge.fury.io/js/postcss-glitch)
-[![CircleCI](https://circleci.com/gh/crftd/postcss-glitch/tree/master.svg?style=svg)](https://circleci.com/gh/crftd/postcss-glitch/tree/master.svg?style=svg)
 
 ![animation](http://g.recordit.co/COmXbvzGfg.gif)
 
@@ -162,6 +161,32 @@ transforms to
 
 And yeah it also works with CSSModules!
 
-## Contributing
+### Testing
 
-PR's are welcome 👍
+There are 2 major groups of tests in this project:
+
+* Tests that are running against source code powered with [jest](https://jestjs.io/)
+
+```bash
+# running jest in the watch mode
+yarn workspace postcss-glitch jest
+
+# or alternatively run it without watch mode as it runs on CI server
+yarn workspace postcss-glitch test
+```
+
+> If you're having difficulties with running in watch mode see [the installation guide](https://facebook.github.io/watchman/docs/install.html#buildinstall) 
+
+* End-to-end tests powered with [cypress](https://www.cypress.io/)
+
+```bash
+# opening cypress
+yarn workspace postcss-glitch cypress open
+
+# running cypress in headless mode
+yarn workspace postcss-glitch cypress run
+```
+
+> Make sure the page under test is up and running at [http://localhost:1234](http://localhost:1234) before opening cypress.
+
+Please respect our tests and make sure that any new behaviour or any change to the existing behaviour is properly reflected in tests.

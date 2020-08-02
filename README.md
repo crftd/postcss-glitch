@@ -1,9 +1,19 @@
 # postcss-glitch
 
-This is a monorepo for a PostCSS Glitch project.
+[![CircleCI](https://circleci.com/gh/crftd/postcss-glitch/tree/master.svg?style=svg)](https://circleci.com/gh/crftd/postcss-glitch/tree/master.svg?style=svg)
+
+Glitch effect implemented with PostCSS. With this plugin you can easily add glitch effect to any text!
+
+![animation](http://g.recordit.co/COmXbvzGfg.gif)
+
+Check out our [demo page](https://crftd.github.io/postcss-glitch/) ([source](https://github.com/crftd/postcss-glitch-demos))
+
+---
+
+This is a monorepo for a PostCSS Glitch project. 
 It contains both plugin source code and various demo projects that use the plugin. 
 
-## Contributing
+## Working with the repo
 
 > **NOTE:** The following documentation describes how to work with this repo.
 > You can find plugin documentation [here](plugin/README.md).
@@ -63,3 +73,9 @@ Please add everything created under `.yarn` directory to git as [Zero-Installs](
 ```bash
 git add .yarn
 ```
+
+### Contributing
+
+If you want to start contributing to this project, please read the [CONTRIBUTING.md](CONTRIBUTING.md). 
+
+
