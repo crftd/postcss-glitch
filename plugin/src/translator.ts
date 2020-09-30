@@ -32,9 +32,11 @@ export default class Translator {
       .append(LEFT_DECLARATION)
       .append(OVERFLOW_DECLARATION)
       .append(decl({ prop: 'clip-path', value: `inset(${height} 0 0 0)` }));
-    declaration.parent.after(afterRule);
-    declaration.parent.after(beforeRule);
-    declaration.parent.after(beforeAfterRule);
+    if (declaration.parent) {
+      declaration.parent.after(afterRule);
+      declaration.parent.after(beforeRule);
+      declaration.parent.after(beforeAfterRule);
+    }
   };
 
   static addKeyframes = (declaration: Declaration): void => {

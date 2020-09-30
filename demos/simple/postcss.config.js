@@ -1,6 +1,6 @@
 module.exports = {
-  plugins: {
-    'postcss-glitch': {},
-    autoprefixer: {},
-  },
+  plugins: [
+    require('postcss-glitch'),
+    require('autoprefixer'),
+  ],
 }
