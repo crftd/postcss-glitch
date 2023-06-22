@@ -3818,7 +3818,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["colorette", "npm:1.2.1"],
             ["normalize-range", "npm:0.1.2"],
             ["num2fraction", "npm:1.2.2"],
-            ["postcss", "npm:8.1.1"],
+            ["postcss", "npm:8.4.24"],
             ["postcss-value-parser", "npm:4.1.0"]
           ],
           "packagePeers": [
@@ -10703,6 +10703,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nanoid", "npm:3.1.12"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:3.3.6", {
+          "packageLocation": "./.yarn/cache/nanoid-npm-3.3.6-e6d6ae7e71-f849c83f0e.zip/node_modules/nanoid/",
+          "packageDependencies": [
+            ["nanoid", "npm:3.3.6"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["nanomatch", [
@@ -11656,6 +11663,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["picocolors", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/picocolors-npm-1.0.0-d81e0b1927-6616d34dd0.zip/node_modules/picocolors/",
+          "packageDependencies": [
+            ["picocolors", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["picomatch", [
         ["npm:2.2.2", {
           "packageLocation": "./.yarn/cache/picomatch-npm-2.2.2-1ce736a913-20fa75e0a5.zip/node_modules/picomatch/",
@@ -11817,6 +11833,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map", "npm:0.6.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:8.4.24", {
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.24-07c10836e5-a5935a6501.zip/node_modules/postcss/",
+          "packageDependencies": [
+            ["postcss", "npm:8.4.24"],
+            ["nanoid", "npm:3.3.6"],
+            ["picocolors", "npm:1.0.0"],
+            ["source-map-js", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["postcss-calc", [
@@ -11970,7 +11996,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cosmiconfig", "npm:7.0.0"],
             ["klona", "npm:2.0.4"],
             ["loader-utils", "npm:2.0.0"],
-            ["postcss", "npm:8.1.1"],
+            ["postcss", "npm:8.4.24"],
             ["schema-utils", "npm:2.7.1"],
             ["semver", "npm:7.3.2"],
             ["webpack", "virtual:493a9fc2a979818d05fa2f317667a02f63896a3e5c638b1565cc0363897bd3839862fc3082fc0905a56d0d48b3614e4b542266a0571e06deb87f03aba018e2e4#npm:4.44.2"]
@@ -13596,7 +13622,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-webpack-plugin", "virtual:493a9fc2a979818d05fa2f317667a02f63896a3e5c638b1565cc0363897bd3839862fc3082fc0905a56d0d48b3614e4b542266a0571e06deb87f03aba018e2e4#npm:4.5.0"],
             ["mini-css-extract-plugin", "virtual:493a9fc2a979818d05fa2f317667a02f63896a3e5c638b1565cc0363897bd3839862fc3082fc0905a56d0d48b3614e4b542266a0571e06deb87f03aba018e2e4#npm:0.11.2"],
             ["pnp-webpack-plugin", "npm:1.6.4"],
-            ["postcss", "npm:8.1.1"],
+            ["postcss", "npm:8.4.24"],
             ["postcss-glitch", "npm:3.2.35"],
             ["postcss-loader", "virtual:493a9fc2a979818d05fa2f317667a02f63896a3e5c638b1565cc0363897bd3839862fc3082fc0905a56d0d48b3614e4b542266a0571e06deb87f03aba018e2e4#npm:4.0.2"],
             ["style-loader", "virtual:493a9fc2a979818d05fa2f317667a02f63896a3e5c638b1565cc0363897bd3839862fc3082fc0905a56d0d48b3614e4b542266a0571e06deb87f03aba018e2e4#npm:1.2.1"],
@@ -13755,6 +13781,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/source-map-npm-0.7.3-e3b4f7982a-351ce26ffa.zip/node_modules/source-map/",
           "packageDependencies": [
             ["source-map", "npm:0.7.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["source-map-js", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/source-map-js-npm-1.0.2-ee4f9f9b30-3bb232796a.zip/node_modules/source-map-js/",
+          "packageDependencies": [
+            ["source-map-js", "npm:1.0.2"]
           ],
           "linkType": "HARD",
         }]
